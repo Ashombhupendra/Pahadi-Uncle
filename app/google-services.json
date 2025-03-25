@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "432413021747",
+    "project_id": "pahadiuncle-7606",
+    "storage_bucket": "pahadiuncle-7606.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:432413021747:android:b7fe5e8d16e3fd9135f546",
+        "android_client_info": {
+          "package_name": "com.pahadi.uncle"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "432413021747-2sjdpbf1vi3341vvgdk08ogujs1qddj6.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.pahadi.uncle",
+            "certificate_hash": "38057163606c310911ca274e9b41596f622394fb"
+          }
+        },
+        {
+          "client_id": "432413021747-don1ile31t6ee04pvbp6ca6ajb9dot4n.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB6UXJ_VEQ4EAjihA62m_IEh1UNT8Lp6ng"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "432413021747-don1ile31t6ee04pvbp6ca6ajb9dot4n.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,102 @@
+<resources>
+    <string name="app_name">Pahadi Uncle</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="agent_code_optional">Agent Code(Optional)</string>
+    <string name="phone_number">Phone Number</string>
+    <string name="full_name">Full Name</string>
+    <string name="pahadi_uncle_logo_cont_desc">Pahadi Uncle Logo</string>
+    <string name="enter_code_msg">Enter the verification code we just sent you on your phone number.</string>
+    <string name="login_signup">Login/Signup</string>
+    <string name="search">Search</string>
+    <string name="featured">Featured</string>
+    <string name="latest_updates">Latest Updates</string>
+    <string name="submit">Submit</string>
+    <string name="login">Login</string>
+    <string name="please_enter_your_10_digit_mobile_number">Please enter your 10 digits mobile number.</string>
+    <string name="didn_t_receive_code">Didn\'t Receive Code?</string>
+    <string name="resend">Resend</string>
+    <string name="multiple_login_message">As we can see, you have previously logged in this app from
+        a different device. Kindly login again from the same device, as using one Account of
+        multiple profiles is against our policy.</string>
+    <string name="email_optional">Email (Optional)</string>
+    <string name="incorrect_otp">Incorrect Otp</string>
+    <string name="mobile_number_verification">Mobile Number Verification</string>
+    <string name="title_activity_scrolling">ScrollingActivity</string>
+    <string name="action_settings">Settings</string>
+    <string name="edit_profile">Edit Profile</string>
+    <string name="change_password">Change Password</string>
+    <string name="about_us">About us</string>
+    <string name="privacy_policy">Privacy policy</string>
+    <string name="terms_and_conditions">Terms and conditions</string>
+    <string name="contact_us">Contact us</string>
+    <string name="my_orders">My Orders</string>
+    <string name="cart">Cart</string>
+    <string name="add_address">Add address</string>
+    <string name="my_products">My products</string>
+    <string name="buy_now">Buy Now</string>
+    <string name="call">Call</string>
+    <string name="addtocart">Add to Cart</string>
+    <string name="logout">Logout</string>
+    <string name="notification">Notification</string>
+    <string name="logout_confirmation_message">Are you sure you want to Log Out?</string>
+    <string name="next">Next</string>
+    <string name="product_name">Product Name</string>
+    <string name="price_text">Price</string>
+    <string name="unit_text">Unit</string>
+    <string name="specification">Specification</string>
+    <string name="description">Description</string>
+    <string name="upload_photo">Upload Photo</string>
+    <string name="upload_video">Upload Video</string>
+    <string name="seller_location">Seller Location</string>
+    <string name="building_no">Building No.</string>
+    <string name="location">Location</string>
+    <string name="landmark">Landmark</string>
+    <string name="state">State</string>
+    <string name="city">City</string>
+    <string name="pin_code">Pin code</string>
+    <string name="permission_required">Permission required</string>
+    <string name="image_permission_rationale">You can upload images of the product that you want to sell.
+        The Images will help potential customers in get more details of the product.
+        Pahadi Uncle app requires Permission to access these images.</string>
+    <string name="permission_denied">Permission denied</string>
+    <string name="storage_permission_denied_message">You would not be able to upload product as you have denied storage access to Pahadi Uncle.
+        If you wish to upload your product post, kindle allow Pahadi Uncle to access media of your device</string>
+    <string name="chat">Chat</string>
+    <string name="location_label">Location </string>
+    <string name="description_label">Description </string>
+    <string name="specification_label">Specification : </string>
+    <string name="show_interest">Show Interest</string>
+    <string name="product_image_cont_desc">Product image</string>
+    <string name="no_products_found">No Products Found</string>
+    <string name="report_product">Report Product</string>
+    <string name="describe_your_issue">Describe your issue</string>
+    <string name="report">Report</string>
+    <string name="seller_details">Seller Details</string>
+    <string name="agent_login">Agent Login</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="out_of_stock">Out of Stock</string>
+    <string name="no_chats_yet">No Chats Yet</string>
+    <string name="say_something">Say Something...</string>
+    <string name="block">Block</string>
+    <string name="remove_interest">Remove Interest</string>
+    <string name="title">Title</string>
+    <string name="delete_product">Delete Product</string>
+    <string name="edit_product">Edit Product</string>
+    <string name="agent_code">Agent Code: %s</string>
+    <string name="agent_name">Agent Name: %s</string>
+    <string name="user">Users</string>
+    <string name="today_register">Today Register</string>
+    <string name="points">Points</string>
+    <string name="safety_tips">
+          " "" "" "    Pahadiuncle.com is NOT invoved in any transaction of any goods/services listed in the website. It is only platform to share information. You are directly contacting the person who has posted the advertisement and you agree not to hold Pahadiuncle.com responsible for the act in any circumstances.
+
+   \n " "" "  We strongly encourage you to take necessary precaution. Avoid advance payment, check goods before purchasing, instead of cash use mobile wallets (GooglePay, Phone Pay, Paytm wallet, etc) or bank transfer for payments.
+
+    </string>
+    <string name="safety_title">Be Safe. Beware of fraud and Scams</string>
+    <string name="product_condition_label">Condition  </string>
+
+
+    <string name="contact_us_tip">If you have any issue. \nPlease contact  we are try to help you</string>
+</resources>

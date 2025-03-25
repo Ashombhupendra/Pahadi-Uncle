@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/notification_view"
+    android:layout_height="match_parent"
+    android:padding="5dp"
+    android:background="@color/gray"
+    tools:context=".presentation.notifications.NotificationView">
+ <RelativeLayout
+     android:layout_width="match_parent"
+     android:elevation="10dp"
+     android:layout_height="wrap_content">
+    <TextView
+        android:id="@+id/notification_view_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="5dp"
+        android:layout_marginLeft="5dp"
+        android:drawableLeft="@drawable/admin_32"
+        android:drawablePadding="10dp"
+       android:gravity="center_vertical"
+        android:textColor="@color/black"
+        android:text="Name : "/>
+
+
+    <TextView
+        android:id="@+id/notification_view_message"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+
+        android:layout_below="@id/notification_view_name"
+        android:layout_margin="0dp"
+        android:paddingHorizontal="10dp"
+        android:textColor="@color/black"
+        android:text="Message : "/>
+     <TextView
+         android:id="@+id/notification_view_email"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:textSize="15sp"
+         android:paddingVertical="5dp"
+         android:paddingHorizontal="10dp"
+         android:visibility="visible"
+         android:layout_below="@id/notification_view_message"
+         android:layout_margin="0dp"
+         android:textColor="@color/black"
+         android:text="user@gmail.com"/>
+
+     <TextView
+         android:id="@+id/notification_view_phone"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:textSize="15sp"
+         android:visibility="visible"
+         android:paddingVertical="5dp"
+         android:paddingHorizontal="10dp"
+         android:layout_below="@id/notification_view_email"
+         android:layout_marginLeft="0dp"
+         android:layout_marginTop="-2dp"
+         android:textColor="@color/black"
+         android:text="9479593255 "/>
+
+    <TextView
+        android:id="@+id/tv_notifi_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="10sp"
+        android:layout_below="@id/notification_view_email"
+        android:layout_margin="5dp"
+        android:layout_alignParentEnd="true"
+        android:textColor="@color/black"
+        android:text="20/11/2021"/>
+
+     <TextView
+         android:id="@+id/show_product"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:layout_alignParentEnd="true"
+         android:text="Show Product"
+         android:visibility="gone"
+         android:padding="10dp"
+         android:textColor="@color/red"
+         android:layout_marginEnd="10dp"
+         android:layout_marginTop="10dp"/>
+
+     <com.google.android.material.button.MaterialButton
+         android:id="@+id/notification_view_chat_button"
+         style="@style/button_primary"
+         android:layout_width="wrap_content"
+         android:layout_marginTop="20dp"
+         android:paddingHorizontal="40dp"
+         android:layout_alignParentEnd="true"
+         android:layout_marginBottom="10dp"
+         android:text="@string/chat"
+         android:layout_below="@id/notification_view_phone"
+         android:textAllCaps="false"
+         app:backgroundTint="@color/orange_dark"
+        />
+
+ </RelativeLayout>
+
+</RelativeLayout>

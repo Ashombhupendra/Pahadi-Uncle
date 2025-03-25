@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="5dp"
+    android:backgroundTint="@color/gray"
+    android:elevation="10dp"
+    app:cardCornerRadius="5dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:background="@drawable/custom_bordered_ripple"
+        android:clickable="true"
+        android:focusable="true"
+        android:id="@+id/relative_notifi"
+        android:padding="10dp"
+        android:weightSum="3"
+        android:orientation="horizontal"
+       >
+        <com.mikhaellopez.circularimageview.CircularImageView
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:src="@drawable/admin_24"
+            android:background="@null"
+            android:scaleType="fitCenter"
+            app:civ_border="false"
+            android:id="@+id/not_pro_pic"/>
+        <RelativeLayout
+            android:layout_width="250dp"
+            android:layout_toEndOf="@id/not_pro_pic"
+            android:gravity="center_vertical"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/not_username"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Aman"
+                android:gravity="center_vertical"
+                android:layout_marginLeft="10dp"
+                android:textColor="@color/black"
+                android:textSize="15sp" />
+            <TextView
+                android:id="@+id/not_msg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="Hello  "
+                android:visibility="gone"
+                android:layout_marginTop="1dp"
+                android:layout_toEndOf="@id/not_username"
+                android:layout_marginLeft="0dp"
+                android:textColor="#2E2E2E"
+                android:textSize="15sp" />
+
+
+
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/not_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="28-03-2021 "
+            android:maxLines="1"
+            android:layout_marginLeft="10dp"
+            android:textAlignment="center"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:textColor="#EE595858"
+            android:textSize="8sp" />
+
+
+</RelativeLayout>
+</androidx.cardview.widget.CardView>

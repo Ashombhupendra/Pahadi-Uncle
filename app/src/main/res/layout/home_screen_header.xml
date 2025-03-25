@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <LinearLayout
+        android:id="@+id/linear_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fitsSystemWindows="true"
+        android:orientation="vertical">
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:weightSum="2"
+    android:backgroundTint="#EAEAEA"
+    android:background="@drawable/bg_10_white"
+    android:layout_marginHorizontal="10dp"
+    android:layout_marginTop="10dp">
+        <EditText
+            android:id="@+id/search_et"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_weight=".2"
+            android:backgroundTint="#EAEAEA"
+            android:drawableEnd="@drawable/ic_baseline_search_24"
+            android:drawableTint="@android:color/black"
+            android:focusable="false"
+            android:hint="@string/search"
+            android:padding="7dp"
+            android:paddingHorizontal="10dp"
+            android:textColorHint="@android:color/black" />
+    <ImageView
+        android:id="@+id/google_mic"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_weight="1.8"
+        android:src="@drawable/google_mic"
+        />
+</LinearLayout>
+        <ImageView
+            android:id="@+id/home_screen_banner"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginTop="5dp"
+            android:visibility="gone"
+            android:src="@drawable/home_screen_banner" />
+
+
+        <com.pahadi.uncle.presentation.home.categories.CategoryViewGroup
+            android:id="@+id/category_rv"
+            android:layout_width="match_parent"
+            android:layout_marginTop="5dp"
+            android:layout_height="100dp" />
+
+        <TextView
+            android:id="@+id/featured_product_tv"
+            style="@style/TextAppearance.MaterialComponents.Headline6"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginVertical="5dp"
+            android:text="Featured Products"
+            android:textColor="@color/blue_dark" />
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/featured_products_rv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"
+            tools:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+            tools:listitem="@layout/item_product"
+            tools:spanCount="2" />
+
+
+        <TextView
+            android:id="@+id/latest_update_tv"
+            style="@style/TextAppearance.MaterialComponents.Headline6"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginVertical="5dp"
+            android:text="All Products"
+            android:textColor="@color/blue_dark" />
+
+        <TextView
+            android:id="@+id/no_cribs_message"
+            android:text="No Product Found"
+            android:layout_marginTop="30dp"
+            android:textAlignment="center"
+            android:gravity="center"
+            android:visibility="gone"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:textSize="18sp"/>
+
+    </LinearLayout>
+</layout>

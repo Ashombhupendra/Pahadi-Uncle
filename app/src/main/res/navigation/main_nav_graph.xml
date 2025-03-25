@@ -1,0 +1,306 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_nav_graph"
+    app:startDestination="@id/splashFragment">
+
+    <fragment
+        android:id="@+id/otpFragment"
+        android:name="com.pahadi.uncle.presentation.OtpFragment"
+        android:label="fragment_otp"
+        tools:layout="@layout/fragment_otp">
+        <action
+            android:id="@+id/action_otpFragment_to_registrationFragment"
+            app:destination="@id/registrationFragment" />
+        <action
+            android:id="@+id/action_otpFragment_to_homeScreenFragment"
+            app:destination="@id/homeScreenFragment"
+            app:popUpTo="@id/otpFragment"
+            app:popUpToInclusive="false"
+            />
+    </fragment>
+    <fragment
+        android:id="@+id/homeScreenFragment"
+        android:name="com.pahadi.uncle.presentation.home.HomeScreenFragment"
+        android:label=""
+        tools:layout="@layout/fragment_home_screen">
+        <action
+            android:id="@+id/action_homeScreenFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+        <action
+            android:id="@+id/action_homeScreenFragment_to_settingsFragment"
+            app:destination="@id/settingsFragment" />
+        <action
+            android:id="@+id/action_homeScreenFragment_to_sellProductFragment"
+            app:destination="@id/sellProductFragment"
+
+            />
+        <action
+            android:id="@+id/action_homeScreenFragment_to_productDetailsFragment"
+            app:destination="@id/productDetailsFragment" />
+        <action
+            android:id="@+id/action_homeScreenFragment_to_searchFragment"
+            app:destination="@id/searchFragment" />
+        <action
+            android:id="@+id/action_homeScreenFragment_to_agentLoginFragment"
+            app:destination="@id/agentLoginFragment" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/splashFragment"
+        android:name="com.pahadi.uncle.presentation.SplashFragment"
+        android:label="fragment_splash"
+        tools:layout="@layout/fragment_splash">
+        <action
+            android:id="@+id/action_splashFragment_to_homeScreenFragment"
+            app:destination="@id/homeScreenFragment"
+            app:popUpTo="@id/splashFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.pahadi.uncle.presentation.login.LoginFragment"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login">
+        <action
+            android:id="@+id/action_loginFragment_to_otpFragment"
+            app:destination="@id/otpFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/registrationFragment"
+        android:name="com.pahadi.uncle.presentation.signup.RegistrationFragment"
+        android:label="RegistrationFragment"
+        tools:layout="@layout/fragment_registration">
+        <action
+            android:id="@+id/action_registrationFragment_to_sellerLocationFragment"
+            app:destination="@id/sellerLocationFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="com.pahadi.uncle.presentation.settings.SettingsFragment"
+        android:label="@string/action_settings"
+        tools:layout="@layout/fragment_settings" />
+    <dialog
+        android:id="@+id/logoutDialogFragment"
+        android:name="com.pahadi.uncle.presentation.logout.LogoutDialogFragment"
+        android:label="LogoutDialogFragment" />
+    <fragment
+        android:id="@+id/sellProductFragment"
+        android:name="com.pahadi.uncle.presentation.sell_product.SellProductFragment"
+        android:label="Sell Product"
+        tools:layout="@layout/fragment_sell_product">
+        <action
+            android:id="@+id/action_sellProductFragment_to_uploadPhotoFragment"
+            app:destination="@id/uploadPhotoFragment" />
+        <argument
+            android:name="product_dto"
+            app:argType="string"
+            app:nullable="true"
+            android:defaultValue="" />
+    </fragment>
+    <fragment
+        android:id="@+id/uploadPhotoFragment"
+        android:name="com.pahadi.uncle.presentation.sell_product.UploadPhotoFragment"
+        android:label="Upload Photos"
+        tools:layout="@layout/fragment_upload_photo">
+        <action
+            android:id="@+id/action_uploadPhotoFragment_to_uploadVideoFragment"
+            app:destination="@id/uploadVideoFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/uploadVideoFragment"
+        android:name="com.pahadi.uncle.presentation.sell_product.UploadVideoFragment"
+        android:label="Upload Video"
+        tools:layout="@layout/fragment_upload_video" />
+    <fragment
+        android:id="@+id/sellerLocationFragment"
+        android:name="com.pahadi.uncle.presentation.signup.SellerLocationFragment"
+        android:label="Location"
+        tools:layout="@layout/fragment_seller_location">
+        <action
+            android:id="@+id/action_sellerLocationFragment_to_homeScreenFragment"
+            app:destination="@id/homeScreenFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/productDetailsFragment"
+        android:name="com.pahadi.uncle.presentation.product_details.ProductDetailsFragment"
+        android:label="Product Details"
+        tools:layout="@layout/fragment_product_details">
+        <argument
+            android:name="ProductDetails"
+            app:argType="com.pahadi.uncle.presentation.product_details.ProductDetails" />
+        <argument
+            android:name="transitionName"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_productDetailsFragment_to_reportProductDialogFragment"
+            app:destination="@id/reportProductDialogFragment" />
+        <action
+            android:id="@+id/action_productDetailsFragment_to_sellerInformationFragment"
+            app:destination="@id/sellerInformationFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/searchFragment"
+        android:name="com.pahadi.uncle.presentation.search.SearchFragment"
+        android:label="Search Products" />
+    <dialog
+        android:id="@+id/reportProductDialogFragment"
+        android:name="com.pahadi.uncle.presentation.report_product.ReportProductDialogFragment"
+        android:label="ReportProductDialogFragment"
+        tools:layout="@layout/dialog_report_product">
+        <argument
+            android:name="product_id"
+            app:argType="string" />
+    </dialog>
+    <fragment
+        android:id="@+id/agentLoginFragment"
+        android:name="com.pahadi.uncle.presentation.agent.login.AgentLoginFragment"
+        android:label="Agent Login">
+        <action
+            android:id="@+id/action_agentLoginFragment_to_agentDashboardFragment"
+            app:destination="@id/agentDashboardFragment"
+            app:popUpTo="@id/agentLoginFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/agentDashboardFragment"
+        android:name="com.pahadi.uncle.presentation.agent.dashboard.AgentDashboardFragment"
+        android:label="Agent Dashboard">
+        <action
+            android:id="@+id/action_agentDashboardFragment_to_userListFragment"
+            app:destination="@id/userListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/userListFragment"
+        android:name="com.pahadi.uncle.presentation.agent.dashboard.UserListFragment"
+        android:label="Agent Users" />
+    <fragment
+        android:id="@+id/myProductsFragment"
+        android:name="com.pahadi.uncle.presentation.my_products.MyProductsFragment"
+        android:label="My Products" />
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.pahadi.uncle.presentation.profile.ProfileFragment"
+        android:label="My Profile" />
+    <fragment
+        android:id="@+id/chatListFragment"
+        android:name="com.pahadi.uncle.presentation.chat.chatLIst.ChatListFragment"
+        android:label="Chats"
+        tools:layout="@layout/fragment_chat_list" />
+    <fragment
+        android:id="@+id/sendMessageFragment"
+        android:name="com.pahadi.uncle.presentation.chat.message.SendMessageFragment"
+        android:label="{other_person_name}"
+        tools:layout="@layout/fragment_send_message">
+        <argument
+            android:name="other_person_user_id"
+            app:argType="string" />
+        <argument
+            android:name="other_person_name"
+            app:argType="string" />
+        <argument
+            android:name="other_person_profile_image"
+            app:argType="string"
+            app:nullable="true" />
+    </fragment>
+    <action
+        android:id="@+id/action_global_sendMessageFragment"
+        app:destination="@id/sendMessageFragment" />
+    <fragment
+        android:id="@+id/sellerInformationFragment"
+        android:name="com.pahadi.uncle.presentation.seller_information.SellerInformationFragment"
+        android:label="Seller Details"
+        tools:layout="@layout/fragment_seller_information">
+        <argument
+            android:name="user_id"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/aboutUsFragment"
+        android:name="com.pahadi.uncle.presentation.WebViewFragment"
+        android:label="About Us" />
+    <fragment
+        android:id="@+id/privacyPolicyFragment"
+        android:name="com.pahadi.uncle.presentation.WebViewFragment"
+        android:label="Privacy Policy" />
+    <fragment
+        android:id="@+id/termsAndConditionsFragment"
+        android:name="com.pahadi.uncle.presentation.WebViewFragment"
+        android:label="Terms And Conditions" />
+    <fragment
+        android:id="@+id/contactUsFragment"
+        android:name="com.pahadi.uncle.presentation.contact_us.ContactUsFragment"
+        android:label="Contact Us"
+        tools:layout="@layout/fragment_contact_us" />
+    <fragment
+        android:id="@+id/notificationFragment"
+        android:name="com.pahadi.uncle.presentation.notifications.NotificationFragment"
+        android:label="Notification"
+        tools:layout="@layout/fragment_notification" />
+    <fragment
+        android:id="@+id/notificationView"
+        android:name="com.pahadi.uncle.presentation.notifications.NotificationView"
+        android:label="Notification Detail"
+        tools:layout="@layout/fragment_notification_view" />
+    <fragment
+        android:id="@+id/agentPasswordChange"
+        android:name="com.pahadi.uncle.presentation.agent.PasswordChange.AgentPasswordChange"
+        android:label="Password Change"
+        tools:layout="@layout/fragment_agent_password_change" />
+    <fragment
+        android:id="@+id/imageDetail"
+        android:name="com.pahadi.uncle.presentation.product_details.image_details.ImageDetail"
+        android:label="Image Detail"
+        tools:layout="@layout/fragment_image_detail" />
+    <fragment
+        android:id="@+id/wishList"
+        android:name="com.pahadi.uncle.presentation.wishlist.WishList"
+        android:label="Wish List"
+        tools:layout="@layout/fragment_wish_list" >
+        <action
+            android:id="@+id/action_wishlist_to_productDetailsFragment"
+            app:destination="@id/productDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/seller_Product_list"
+        android:name="com.pahadi.uncle.presentation.product_details.sellerproducts.Seller_Product_list"
+        android:label="Seller Product"
+        tools:layout="@layout/fragment_seller__product_list"/>
+    <dialog
+        android:id="@+id/rateProduct"
+        android:name="com.pahadi.uncle.presentation.rating.RateProduct"
+        android:label="Rate Product"
+        tools:layout="@layout/fragment_rate_product"/>
+    <fragment
+        android:id="@+id/viewAllrating"
+        android:name="com.pahadi.uncle.presentation.rating.ViewAllrating"
+        android:label="Rating"
+        tools:layout="@layout/fragment_view_allrating"/>
+    <fragment
+        android:id="@+id/my_Cart"
+        android:name="com.pahadi.uncle.presentation.my_cart.My_Cart"
+        android:label="My Cart"
+        tools:layout="@layout/fragment_my__cart"/>
+    <fragment
+        android:id="@+id/my_Orders"
+        android:name="com.pahadi.uncle.presentation.my_orders.My_Orders"
+        android:label="My Orders"
+        tools:layout="@layout/fragment_my__orders"/>
+    <fragment
+        android:id="@+id/add_Address"
+        android:name="com.pahadi.uncle.presentation.my_add_address.Add_Address"
+        android:label="Add Address"
+        tools:layout="@layout/fragment_add__address" />
+    <fragment
+        android:id="@+id/paymentScreen"
+        android:name="com.pahadi.uncle.presentation.my_orders.paymentscreen.PaymentScreen"
+        android:label="Proceed to Payment"
+        tools:layout="@layout/fragment_payment_screen">
+        <action
+            android:id="@+id/action_paymentScreen_to_my_Orders"
+            app:popUpToInclusive="true"
+            app:popUpTo="@id/paymentScreen"
+            app:destination="@id/my_Orders" />
+    </fragment>
+</navigation>

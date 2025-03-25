@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:background="@drawable/bg_10_white"
+    android:backgroundTint="@color/white"
+    android:elevation="2dp"
+    android:padding="5dp"
+    android:layout_margin="5dp"
+    android:layout_height="wrap_content">
+
+    <com.mikhaellopez.circularimageview.CircularImageView
+        android:id="@+id/user_image"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="13dp"
+        app:civ_border_color="@color/blue_dark"
+        app:civ_border_width="2dp"
+        app:layout_constraintBottom_toTopOf="@id/view_rating_rate"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        tools:src="@tools:sample/avatars[1]" />
+    <TextView
+        android:id="@+id/view_rating_name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@id/user_image"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/user_image"
+        android:layout_marginTop="5dp"
+        tools:text="@tools:sample/lorem"
+        android:singleLine="true"
+        android:textSize="20sp"
+        android:layout_marginStart="5dp"
+        android:textColor="@color/black"
+        />
+    <TextView
+        android:id="@+id/view_rating_review"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@id/user_image"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/view_rating_name"
+        app:layout_constraintBottom_toTopOf="@id/view_rating_rate"
+        tools:text="nyc"
+        android:textSize="16sp"
+        android:layout_marginStart="5dp"
+        android:textColor="@color/grey"
+        />
+    <RatingBar
+        android:id="@+id/view_rating_rate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:rating="3"
+        android:numStars="5"
+        android:progressTint="@color/orange_dark"
+        android:progressBackgroundTint="@color/grey"
+        app:layout_constraintStart_toStartOf="@id/user_image"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginVertical="5dp"
+        android:layout_marginHorizontal="10dp"
+        style="@style/Widget.AppCompat.RatingBar.Small"/>
+
+    <TextView
+        android:id="@+id/view_rating_total_review"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toStartOf="@id/view_rating_date"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginVertical="5dp"
+        app:layout_constraintStart_toEndOf="@id/view_rating_rate"
+        tools:text="200"
+        android:textSize="15sp"
+        android:textColor="@color/grey"
+        />
+    <TextView
+        android:id="@+id/view_rating_date"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginVertical="5dp"
+        android:layout_marginHorizontal="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:text="20/12/2021"
+        android:textSize="13sp"
+        android:textColor="@color/grey"
+        />
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

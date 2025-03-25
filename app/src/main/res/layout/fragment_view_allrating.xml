@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:background="@color/white"
+    android:layout_height="match_parent"
+    tools:context=".presentation.rating.ViewAllrating">
+    <com.google.android.material.progressindicator.LinearProgressIndicator
+        android:id="@+id/view_all_rating_progress_indicator"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:indeterminate="true"
+        android:visibility="visible"
+        app:indicatorColor="@color/orange_dark"
+        app:layout_constraintTop_toTopOf="parent"
+        app:trackColor="@color/white" />
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/view_rating_rv"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:visibility="visible"
+        app:layout_constraintTop_toBottomOf="@id/view_all_rating_progress_indicator"
+        tools:listitem="@layout/item_view_all_rating"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        />
+
+    <TextView
+        android:id="@+id/no_rating_found"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="No Rating Found"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        android:background="@drawable/bg_product_detail"
+        android:paddingVertical="5dp"
+        android:paddingHorizontal="30dp"
+        android:layout_marginVertical="40dp"
+        app:layout_constraintTop_toTopOf="parent"
+        android:elevation="10dp"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,308 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+
+        <variable
+            name="sellerDetails"
+            type="com.pahadi.uncle.network.data.SellerDto" />
+        <variable
+            name="sellerupdate"
+            type="com.pahadi.uncle.presentation.agent.dashboard.AgentDashboardViewModel" />
+
+        <variable
+            name="viewmodel"
+            type="com.pahadi.uncle.presentation.profile.ProfileViewModel" />
+    </data>
+
+
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:paddingBottom="30dp"
+        android:layout_height="wrap_content">
+
+        <com.mikhaellopez.circularimageview.CircularImageView
+            android:id="@+id/seller_pro_edit_img"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:elevation="1dp"
+            image_url="@{sellerDetails.profileUrl}"
+            android:src="@drawable/ic_person_tie"
+            app:layout_constraintBottom_toTopOf="@id/form"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/form" />
+
+        <LinearLayout
+            android:id="@+id/form"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="100dp"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/bg_20_blue"
+            android:orientation="vertical"
+            android:padding="20dp"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                style="@style/TextAppearance.MaterialComponents.Headline6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="60dp"
+                android:text="@string/edit_profile"
+                android:textColor="@android:color/white" />
+
+            <TextView
+                android:id="@+id/username_label"
+                style="@style/TextAppearance.MaterialComponents.Body2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="Username"
+                android:textColor="@android:color/white" />
+
+            <EditText
+                android:id="@+id/username"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/bg_10_white"
+                android:padding="10dp"
+                android:singleLine="false"
+                android:editable="false"
+                android:capitalize="sentences"
+                android:enabled="false"
+                android:text="@{sellerDetails.username}"
+                android:textColorHint="@color/black"
+                android:textColor="@android:color/black" />
+
+            <TextView
+                android:id="@+id/email_label"
+                style="@style/TextAppearance.MaterialComponents.Body2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:inputType="textEmailAddress"
+                android:text="Email"
+                android:textColor="@android:color/white" />
+
+            <EditText
+                android:id="@+id/email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/bg_10_white"
+                android:padding="10dp"
+                android:singleLine="false"
+                android:editable="false"
+                android:enabled="false"
+                android:text="@{sellerDetails.email}"
+                android:textColorHint="@color/black"
+                android:textColor="@android:color/black" />
+
+            <TextView
+                android:id="@+id/building_label"
+                style="@style/TextAppearance.MaterialComponents.Body2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:text="Building"
+                android:textColor="@android:color/white" />
+
+            <EditText
+                android:id="@+id/building"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/bg_10_white"
+                android:padding="10dp"
+                android:singleLine="false"
+                android:capitalize="sentences"
+                android:textColorHint="@color/black"
+                android:text="@{sellerDetails.building}"
+                android:textColor="@android:color/black" />
+
+            <TextView
+                android:id="@+id/location_label"
+                style="@style/TextAppearance.MaterialComponents.Body2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:text="Location"
+                android:textColor="@android:color/white" />
+
+            <EditText
+                android:id="@+id/location"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/bg_10_white"
+                android:padding="10dp"
+                android:capitalize="sentences"
+                android:singleLine="false"
+                android:text="@{sellerDetails.location}"
+                android:textColorHint="@color/black"
+                android:textColor="@android:color/black" />
+
+            <TextView
+                android:id="@+id/landmark_label"
+                style="@style/TextAppearance.MaterialComponents.Body2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:text="Landmark"
+                android:textColor="@android:color/white" />
+
+            <EditText
+                android:id="@+id/landmark"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/bg_10_white"
+                android:padding="10dp"
+                android:capitalize="sentences"
+                android:singleLine="false"
+                android:text="@{sellerDetails.landmark}"
+                android:textColorHint="@color/black"
+                android:textColor="@android:color/black" />
+
+            <TextView
+                android:id="@+id/pincode_label"
+                style="@style/TextAppearance.MaterialComponents.Body2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:text="Pincode"
+                android:textColor="@android:color/white" />
+
+            <EditText
+                android:id="@+id/pincode"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/bg_10_white"
+                android:padding="10dp"
+                android:inputType="number"
+                android:singleLine="false"
+                android:text="@{sellerDetails.pinCode}"
+                android:textColorHint="@color/black"
+                android:textColor="@android:color/black" />
+
+            <TextView
+                android:id="@+id/state_label"
+                style="@style/TextAppearance.MaterialComponents.Body2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:text="State"
+                android:textColor="@android:color/white" />
+
+            <EditText
+                android:id="@+id/state"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/bg_10_white"
+                android:padding="10dp"
+                android:capitalize="sentences"
+                android:singleLine="false"
+                android:editable="false"
+                android:enabled="false"
+                android:text="@{sellerDetails.state}"
+                android:textColorHint="@color/black"
+                android:textColor="@android:color/black" />
+
+            <TextView
+                android:id="@+id/district_label"
+                style="@style/TextAppearance.MaterialComponents.Body2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:text="District"
+                android:textColor="@android:color/white" />
+
+            <EditText
+                android:id="@+id/district"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/bg_10_white"
+                android:padding="10dp"
+                android:editable="false"
+                android:capitalize="sentences"
+                android:enabled="false"
+                android:singleLine="false"
+                android:text="@{sellerDetails.district}"
+                android:textColorHint="@color/black"
+                android:textColor="@android:color/black" />
+
+            <TextView
+                android:id="@+id/city_label"
+                style="@style/TextAppearance.MaterialComponents.Body2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:text="City"
+                android:layout_marginBottom="5dp"
+                android:textColor="@android:color/white" />
+
+            <EditText
+                android:id="@+id/city"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/bg_10_white"
+                android:padding="10dp"
+                android:visibility="gone"
+                android:capitalize="sentences"
+                android:text="@{sellerDetails.city}"
+                android:textColorHint="@color/black"
+                android:textColor="@android:color/black" />
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginVertical="0dp"
+                android:layout_marginTop="10dp"
+
+                android:background=  "@drawable/bg_10_white">
+
+                <Spinner
+                    android:id="@+id/pro_city"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+
+                    android:backgroundTint="@color/black"
+                    android:inputType="number"
+                    android:saveEnabled="true"
+                    android:textColor="@android:color/black"
+                    android:textColorHint="@android:color/darker_gray" />
+            </FrameLayout>
+
+        </LinearLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_seller_edit_pro"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="16dp"
+            android:text="@string/submit"
+            android:layout_marginBottom="30dp"
+            android:backgroundTint="@color/button_tint"
+            android:textColor="@android:color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/form" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
+</layout>

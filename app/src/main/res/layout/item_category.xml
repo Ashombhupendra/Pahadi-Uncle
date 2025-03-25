@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="selected"
+            type="java.lang.Boolean" />
+
+        <variable
+            name="categoryItem"
+            type="com.pahadi.uncle.presentation.home.categories.CategoryItem" />
+    </data>
+
+    <merge
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingHorizontal="10dp">
+
+        <FrameLayout
+            android:id="@+id/cate_fram"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:background="@{selected ? @drawable/gradient_ring : @drawable/square_shape}"
+            android:padding="3dp">
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/image_card"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@android:color/white"
+                android:clipChildren="true"
+                app:cardCornerRadius="25dp"
+                app:strokeColor="@android:color/white"
+                app:strokeWidth="3dp">
+
+                <ImageView
+                    android:id="@+id/category_iv"
+                    image_url="@{categoryItem.iconLink}"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:background="@{categoryItem.backgroundColor}"
+                    android:padding="10dp"
+                    android:scaleType="fitCenter"
+                    tools:src="@drawable/all_categories_icon" />
+            </com.google.android.material.card.MaterialCardView>
+        </FrameLayout>
+
+        <TextView
+            android:id="@+id/category_name"
+            style="@style/TextAppearance.MaterialComponents.Body2"
+            android:layout_width="90dp"
+            android:maxLines="2"
+            android:ems="3"
+            android:ellipsize="end"
+            android:singleLine="false"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="@{categoryItem.categoryName}"
+            android:layout_gravity="center_horizontal"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            tools:text="Handlooms w Handicraft" />
+    </merge>
+</layout>

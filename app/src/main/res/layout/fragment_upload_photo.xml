@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="frag"
+            type="com.pahadi.uncle.presentation.sell_product.UploadPhotoFragment" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        xmlns:tools="http://schemas.android.com/tools">
+
+        <TextView
+            android:id="@+id/upload_photo_tv"
+            style="@style/TextAppearance.MaterialComponents.Body1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="40dp"
+            android:text="@string/upload_photo"
+            android:textColor="@color/blue_dark"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/image_1"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp"
+            android:onClick="@{()->frag.getImageFromGallery(0)}"
+            android:background="@drawable/add_photo_icon"
+            android:scaleType="centerCrop"
+            app:shapeAppearanceOverlay="@style/rounded_corners"
+            app:layout_constraintBottom_toTopOf="@+id/image_3"
+            app:layout_constraintEnd_toStartOf="@+id/image_2"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/upload_photo_tv" />
+
+        <ImageView
+            android:id="@+id/cancel_img_1"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            app:layout_constraintTop_toTopOf="@id/image_1"
+            app:layout_constraintEnd_toEndOf="@id/image_1"
+            android:layout_marginEnd="10dp"
+            android:visibility="gone"
+            android:layout_marginTop="10dp"
+            android:src="@drawable/img_cancel"/>
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/image_2"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp"
+            android:onClick="@{()->frag.getImageFromGallery(1)}"
+            android:background="@drawable/add_photo_icon"
+            android:scaleType="centerCrop"
+            app:shapeAppearanceOverlay="@style/rounded_corners"
+            app:layout_constraintBottom_toTopOf="@+id/image_4"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/image_1"
+            app:layout_constraintTop_toBottomOf="@id/upload_photo_tv" />
+        <ImageView
+            android:id="@+id/cancel_img_2"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            app:layout_constraintTop_toTopOf="@id/image_2"
+            app:layout_constraintEnd_toEndOf="@id/image_2"
+            android:layout_marginEnd="10dp"
+            android:layout_marginTop="10dp"
+            android:visibility="gone"
+            android:src="@drawable/img_cancel"/>
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/image_3"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/add_photo_icon"
+            android:scaleType="centerCrop"
+            android:onClick="@{()->frag.getImageFromGallery(2)}"
+            app:shapeAppearanceOverlay="@style/rounded_corners"
+            app:layout_constraintBottom_toTopOf="@+id/next_button"
+            app:layout_constraintEnd_toStartOf="@+id/image_4"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/image_1" />
+        <ImageView
+            android:id="@+id/cancel_img_3"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            app:layout_constraintTop_toTopOf="@id/image_3"
+            app:layout_constraintEnd_toEndOf="@id/image_3"
+            android:layout_marginEnd="10dp"
+            android:visibility="gone"
+            android:layout_marginTop="10dp"
+            android:src="@drawable/img_cancel"/>
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/image_4"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="20dp"
+            android:onClick="@{()->frag.getImageFromGallery(3)}"
+            android:background="@drawable/add_photo_icon"
+            android:scaleType="centerCrop"
+            app:shapeAppearanceOverlay="@style/rounded_corners"
+            app:layout_constraintBottom_toTopOf="@+id/next_button"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/image_3"
+            app:layout_constraintTop_toBottomOf="@+id/image_2" />
+        <ImageView
+            android:id="@+id/cancel_img_4"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            app:layout_constraintTop_toTopOf="@id/image_4"
+            app:layout_constraintEnd_toEndOf="@id/image_4"
+            android:layout_marginEnd="10dp"
+            android:visibility="gone"
+            android:layout_marginTop="10dp"
+            android:src="@drawable/img_cancel"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/next_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/bg_10_white"
+            android:text="@string/next"
+            android:onClick="@{()->frag.submit()}"
+            android:textColor="@android:color/white"
+            app:backgroundTint="@color/orange_dark"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

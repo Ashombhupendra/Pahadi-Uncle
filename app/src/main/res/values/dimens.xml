@@ -1,0 +1,6 @@
+<resources>
+    <dimen name="app_bar_icon_size">20dp</dimen>
+    <dimen name="app_bar_icon_middle_gap">45dp</dimen>
+    <dimen name="view_pager_height">250dp</dimen>
+    <dimen name="message_profile_image_size">40dp</dimen>
+</resources>
