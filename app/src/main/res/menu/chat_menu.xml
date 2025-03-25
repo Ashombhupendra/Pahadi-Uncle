@@ -4,4 +4,3 @@
         android:id="@+id/block_chat"
         android:title="@string/block" />
 </menu>
-
