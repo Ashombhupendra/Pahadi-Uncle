@@ -281,6 +281,7 @@ class BuyerProfileFragment : Fragment(R.layout.fragment_buyer_profile) {
                 e.printStackTrace()
             }
         }
+
         alertDialog.setNegativeButton(
             "CANCEL"
         ) { _, _ -> }
