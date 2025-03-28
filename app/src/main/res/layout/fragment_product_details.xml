@@ -613,6 +613,18 @@
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
+              <!--  <TextView
+                    android:id="@+id/seller_label"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Seller"
+                    android:textSize="18sp"
+                    android:visibility="@{productDetails.featured ? View.GONE : View.VISIBLE}"
+                    android:textColor="@color/orange_dark"
+                    android:textStyle="bold"
+                    android:textAlignment="center"
+                    app:layout_constraintTop_toTopOf="parent"
+                    />-->
                 <TextView
                     android:id="@+id/seller_label"
                     android:layout_width="match_parent"
@@ -625,7 +637,7 @@
                     android:textAlignment="center"
                     app:layout_constraintTop_toTopOf="parent"
                     />
-                <com.google.android.material.button.MaterialButton
+               <!-- <com.google.android.material.button.MaterialButton
                     android:id="@+id/chat_button"
                     style="@style/button_primary"
                     android:layout_width="0dp"
@@ -640,7 +652,22 @@
                     app:layout_constraintHorizontal_bias="0.5"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/seller_label" />
-
+-->
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/chat_button"
+                    style="@style/button_primary"
+                    android:layout_width="0dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:text="@string/chat"
+                    android:textAllCaps="false"
+                    app:backgroundTint="@color/orange_dark"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/call_seller"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/seller_label" />
                 <com.google.android.material.button.MaterialButton
                     android:id="@+id/show_interest_button"
                     style="@style/button_primary"
@@ -657,7 +684,7 @@
                     app:layout_constraintHorizontal_bias="0.5"
                     app:layout_constraintStart_toEndOf="@+id/chat_button"
                     app:layout_constraintTop_toBottomOf="@id/seller_label"/>
-                <com.google.android.material.button.MaterialButton
+              <!--  <com.google.android.material.button.MaterialButton
                     android:id="@+id/call_seller"
                     style="@style/button_primary"
                     android:layout_width="0dp"
@@ -671,8 +698,22 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.5"
                     app:layout_constraintStart_toEndOf="@+id/chat_button"
+                    app:layout_constraintTop_toBottomOf="@id/seller_label"/>-->
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/call_seller"
+                    style="@style/button_primary"
+                    android:layout_width="0dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:text="@string/call"
+                    android:textAllCaps="false"
+                    app:backgroundTint="@color/orange_dark"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/chat_button"
                     app:layout_constraintTop_toBottomOf="@id/seller_label"/>
-
             </androidx.constraintlayout.widget.ConstraintLayout>
 
         </com.google.android.material.card.MaterialCardView>

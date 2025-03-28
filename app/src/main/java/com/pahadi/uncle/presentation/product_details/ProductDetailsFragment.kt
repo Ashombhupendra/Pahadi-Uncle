@@ -270,16 +270,16 @@ import com.pahadi.uncle.presentation.utils.temp_showToast
             if (SharedPrefHelper.isLoggedIn) {
 
 
-              if (mProductDetails.featured){
-                  addtoCartItem()
-                  mProductDetailsViewModel.addtoCartPro.value = false
-              }else{
+//              if (mProductDetails.featured){
+//                  addtoCartItem()
+//                  mProductDetailsViewModel.addtoCartPro.value = false
+//              }else{
 
                   val intent = Intent(Intent.ACTION_DIAL)
                   intent.data = Uri.parse("tel:${seller_number.value}")
                   Log.d("sellernumber : ", seller_number.value.toString())
                   startActivity(intent)
-              }
+            //  }
 
 
             }else{
@@ -291,13 +291,13 @@ import com.pahadi.uncle.presentation.utils.temp_showToast
         mBinding.chatButton.setOnClickListener {
 
             if(SharedPrefHelper.isLoggedIn) {
-                if (mProductDetails.featured){
-                  //  Toast.makeText(requireContext(),"Add to cart",Toast.LENGTH_SHORT).show()
-                   //Bottom add to cart
-                    addtoCartItem()
-                    mProductDetailsViewModel.addtoCartPro.value = true
-
-                }else{
+//                if (mProductDetails.featured){
+//                  //  Toast.makeText(requireContext(),"Add to cart",Toast.LENGTH_SHORT).show()
+//                   //Bottom add to cart
+//                    addtoCartItem()
+//                    mProductDetailsViewModel.addtoCartPro.value = true
+//
+//                }else{
                     val args = bundleOf(
                         "other_person_user_id" to mProductDetails.userId,
                         "other_person_name" to mProductDetails.username,
@@ -306,7 +306,7 @@ import com.pahadi.uncle.presentation.utils.temp_showToast
 
                     )
                     findNavController().navigate(R.id.action_global_sendMessageFragment, args)
-                }
+//                }
             }else{
                 findNavController().navigate(R.id.loginFragment)
             }
@@ -420,6 +420,7 @@ import com.pahadi.uncle.presentation.utils.temp_showToast
         return app_installed
     }
 
+    @SuppressLint("SuspiciousIndentation")
     fun productInterestDialog(){
         val mDialogView = LayoutInflater.from(requireContext()).inflate(R.layout.custom_interst_dialog, null)
         //AlertDialogBuilder

@@ -1,6 +1,7 @@
 package com.pahadi.uncle.presentation.profile
 
 import android.Manifest
+import android.annotation.SuppressLint
 import android.app.Activity
 import android.app.AlertDialog
 import android.content.ActivityNotFoundException
@@ -87,12 +88,14 @@ class BuyerProfileFragment : Fragment(R.layout.fragment_buyer_profile) {
         return binding.root
     }
 
+    @SuppressLint("SuspiciousIndentation")
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         // (SharedPrefHelper.agentLoginStatus as AgentLoginStatus.LoggedIn).agentDto
         val buyer = (SharedPrefHelper.user)
         AndroidNetworking.initialize(requireContext());
-        bindProgressButton(binding.buyerSubmitPro)
+/*        change by ytest
+        //bindProgressButton(binding.buyerSubmitPro)*/
 
         //   binding.buyerusername = buyer.userName
           // binding.buyerphone = buyer.phoneNumber
@@ -178,10 +181,18 @@ class BuyerProfileFragment : Fragment(R.layout.fragment_buyer_profile) {
 
         }
 
-        binding.buyerSubmitPro.setOnClickListener {
+/*  change by ytest
+      binding.buyerSubmitPro.setOnClickListener {
             val username = view.findViewById<EditText>(R.id.username)
             val email = view.findViewById<EditText>(R.id.email)
             val phone = view.findViewById<EditText>(R.id.phone)
+
+            Log.d("Result yash","userId: ${buyer.userId}, " +
+                    "sellerId: ${buyer.sellerId}," +
+                    "username: ${username.text.toString()}, " +
+                    "email: ${email.text.toString()}," +
+                    " phone: ${phone.text.toString()}" +
+                    ",picture: $picture")
                 if (picture != null){
                     val user = SharedPrefHelper.user
                     SharedPrefHelper.user = UserEntity(
@@ -201,12 +212,18 @@ class BuyerProfileFragment : Fragment(R.layout.fragment_buyer_profile) {
             //    updatebuyerpro(picture,username.text.toString(), email.text.toString(), phone.text.toString())
             val buyer1 = (SharedPrefHelper.user)
 
-            Log.d("Result : ", "userid = ${buyer1.userId} , sellerid = ${buyer1.sellerId}")
+            Log.d("Result : ", "userid = ${buyer1.userId} , sellerid = ${buyer1.sellerId}, profileid = ${sellerid.value.toString()}")
             lifecycleScope.launch {
             //    val sellerResponse = AuthRepository.getSellerDetails(buyer1.userId)
+
+
                 val result = AuthRepository.buyerprofileupdate(
-                    sellerid.value.toString(), buyer1.userId, username.text.toString(), email.text.toString(),
-                    phone.text.toString(), picture
+                    profileID= sellerid.value.toString(),
+                     userId = buyer1.userId,
+                    userName= username.text.toString(),
+                    email= email.text.toString(),
+                    phone= phone.text.toString(),
+                    picture=picture
                 )
                 when (result) {
                     is ResultWrapper.Success -> {
@@ -233,7 +250,7 @@ class BuyerProfileFragment : Fragment(R.layout.fragment_buyer_profile) {
                 }
             }
 
-        }
+        }*/
 
     }
 
@@ -281,7 +298,6 @@ class BuyerProfileFragment : Fragment(R.layout.fragment_buyer_profile) {
                 e.printStackTrace()
             }
         }
-
         alertDialog.setNegativeButton(
             "CANCEL"
         ) { _, _ -> }

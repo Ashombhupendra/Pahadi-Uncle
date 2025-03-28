@@ -239,6 +239,15 @@ class SellerProfileFragment : Fragment(R.layout.fragment_seller_profile) {
             val state = view.findViewById<EditText>(R.id.state)
             val city = view.findViewById<EditText>(R.id.city)
             val district = view.findViewById<EditText>(R.id.district)
+Log.d("cityaaaaa","TEXT: "+ text.text.toString() +
+        ",EMAIL: "+email.text.toString()+
+        ",buil: "+  building.text.toString()+
+        ",loc:"+ location.text.toString()+
+        ",land:"+ landmark.text.toString()+
+        ".pin: "+viewModel.pincode.value+
+        ",stt:"+viewModel.state.value+
+        ",cit:"+viewModel.city.value+
+        ",dit: "+viewModel.district.value)
 
             val user = SharedPrefHelper.user
 
@@ -253,16 +262,17 @@ class SellerProfileFragment : Fragment(R.layout.fragment_seller_profile) {
                 pincode.setError("Enter your pin number")
             }else{
                 updateprofile(
-                    text.text.toString(),
-                    viewModel.district.value ?: "",
-                    user.phoneNumber.toString(),
-                    email.text.toString(),
-                    building.text.toString(),
-                    location.text.toString(),
-                    landmark.text.toString(),
-                    viewModel.pincode.value ?: "",
-                    viewModel.state.value ?: "",
-                    viewModel.city.value ?: ""
+                  username =   text.text.toString(),
+                    phone= user.phoneNumber.toString(),
+                    email = email.text.toString(),
+                  building =   building.text.toString(),
+                    location = location.text.toString(),
+                    landmark = landmark.text.toString(),
+                    Pincode = viewModel.pincode.value ?: "",
+                  district =   viewModel.district.value ?: "",
+                  state =   viewModel.state.value ?: "",
+                    city = viewModel.city.value ?: ""
+
                 )
 
             }
@@ -296,10 +306,21 @@ class SellerProfileFragment : Fragment(R.layout.fragment_seller_profile) {
     }
 
     fun updateprofile(
-        username: String, district: String, phone: String, email: String, building: String,
-        location: String, landmark: String, Pincode: String,
-        state: String, city: String
+        username: String,
+        district: String,
+        phone: String,
+        email: String,
+        building: String,
+        location: String,
+        landmark: String,
+        Pincode: String,
+        state: String,
+        city: String
     ) {
+        Log.d("RESULTss","username : "+username+"\n,district : "
+                + district +",phone : "+ phone +",email : "+ email +"\n,building : "
+                + building +",loc : "+ location +
+                ",land : "+ landmark + "\n,pincon : "+Pincode + ",state : "+state +",cit : "+ city)
 
         binding.btnSellerEditPro.apply {
             showProgress()
@@ -314,10 +335,14 @@ class SellerProfileFragment : Fragment(R.layout.fragment_seller_profile) {
 
             val result = AuthRepository.updateSellerDetails(
                 buyer.userId, sellerid.value.toString(),
-                userName = username, email = email, buildingNumber = building, location = location,
-                landmark = landmark, state = state, district = district, city = city, pinCode = Pincode,
+                userName = username, email = email,
+                buildingNumber = building, location = location,
+                landmark = landmark, state = state,
+                district = district, city = city,
+                pinCode = Pincode,
                 picture = picture
             )
+
             Log.d("RESULT", result.toString())
             when (result) {
                 is ResultWrapper.Success -> {
@@ -331,11 +356,13 @@ class SellerProfileFragment : Fragment(R.layout.fragment_seller_profile) {
 
                 }
                 is ResultWrapper.Failure -> {
+                    print("sjfkd " + result.errorMessage)
                     Log.d("Result f", result.errorMessage)
                     binding.btnSellerEditPro.apply {
                         hideProgress("Submit")
                         isEnabled = true
                     }
+
                     showSnackBar("Something Went Wrong Try  Again Later.. ")
                 }
 

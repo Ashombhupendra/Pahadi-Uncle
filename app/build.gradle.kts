@@ -21,8 +21,8 @@ android {
         applicationId = "com.pahadi.uncle"
         minSdk = 24
         targetSdk = 34
-        versionCode = 45
-        versionName = "0.4.5"
+        versionCode = 46
+        versionName = "0.4.6"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables {
